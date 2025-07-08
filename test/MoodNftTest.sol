@@ -66,7 +66,7 @@ contract MoodNftTest is Test, ZkSyncChainChecker, FoundryZkSyncChecker {
     }
 
     // logging events doesn't work great in foundry-zksync
-    function testEventRecordsCorrectTokenIdOnMinting() public onlyVanillaFoundry {
+    function testEventRecordsCorrectTokenIdOnMinting() public  {
         uint256 currentAvailableTokenId = moodNft.getTokenCounter();
 
         vm.prank(USER);
