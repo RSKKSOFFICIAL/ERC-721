@@ -110,5 +110,3 @@ MIT License
 ---
 
 Made with 🦄 using Foundry & Make.
-
-```
