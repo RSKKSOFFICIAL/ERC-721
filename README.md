@@ -1,66 +1,114 @@
-## Foundry
+# 🖼️ NFT ERC-721 Project (Foundry)
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project implements two ERC-721 NFTs — `BasicNft` and `MoodNft` — using [Foundry](https://book.getfoundry.sh/) and leverages a `Makefile` to streamline testing, deployment, and development automation.
 
-Foundry consists of:
+---
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## ⚙️ Prerequisites
 
-## Documentation
+- [Foundry](https://book.getfoundry.sh/getting-started/installation.html)
 
-https://book.getfoundry.sh/
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+````
 
-## Usage
+---
 
-### Build
+## 🧰 Setup & Installation
 
-```shell
-$ forge build
+```bash
+make install     # Install all dependencies (openzeppelin, foundry-std, foundry-devops)
+make build       # Compile the smart contracts
 ```
 
-### Test
+---
 
-```shell
-$ forge test
+## 🧪 Run Tests
+
+### Local tests (Anvil):
+
+```bash
+make anvil       # Launch local test node
+make test        # Run all tests
 ```
 
-### Format
+### ZkSync-compatible tests:
 
-```shell
-$ forge fmt
+```bash
+make zktest
 ```
 
-### Gas Snapshots
+---
 
-```shell
-$ forge snapshot
+## 🚀 Deployment & Interactions
+
+Set your `.env` with the following values:
+
+```env
+SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/YOUR_KEY
+PRIVATE_KEY=your_deployer_private_key
+ETHERSCAN_API_KEY=your_etherscan_api_key
 ```
 
-### Anvil
+### Deploy `BasicNft`
 
-```shell
-$ anvil
+```bash
+make deploy
 ```
 
-### Deploy
+### Mint `BasicNft`
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```bash
+make mint
 ```
 
-### Cast
+### Deploy `MoodNft`
 
-```shell
-$ cast <subcommand>
+```bash
+make deployMood
 ```
 
-### Help
+### Mint `MoodNft`
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+```bash
+make mintMoodNft
+```
+
+### Flip Mood NFT State
+
+```bash
+make flipMoodNft
+```
+
+---
+
+## ⚗️ Local ZkSync Deployment
+
+Launch ZkSync-compatible deployment using:
+
+```bash
+make zkdeploy
+```
+
+---
+
+## 🧹 Clean, Format, Snapshot
+
+```bash
+make clean      # Clean build files
+make format     # Auto-format contracts
+make snapshot   # Snapshot gas usage
+```
+
+---
+
+## 📜 License
+
+MIT License
+
+---
+
+Made with 🦄 using Foundry & Make.
+
 ```
