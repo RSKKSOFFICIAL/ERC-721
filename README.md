@@ -106,7 +106,3 @@ make snapshot   # Snapshot gas usage
 ## 📜 License
 
 MIT License
-
----
-
-Made with Foundry.
